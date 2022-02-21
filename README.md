@@ -10,66 +10,64 @@ Group Milestone 1 - README
 
 ## Overview
 ### Description
-Tracks what music an individual listens to, and pairs them with others based on that music. Could be potentially used as a dating app, or just meeting new friends with similar music tastes.
+A service that connects people who love music by generating playlists full of songs they enjoy and new songs for the listener to experience. The user can save playlists that they want to keep and have access to playlists already generated.
 
 ### App Evaluation
-- **Category:** Social Networking / Music
-- **Story:** Analyzes users music choices, and connects them to other users with similar choices. The user can then decide to message this person and befriend them if wanted.
-- **Market:** Any individual could choose to use this app, and to keep it a safe environment, people would be organized into age groups.
-- **Habit:** This app could be used as often or unoften as the user wanted depending on how deep their social life is, and what exactly they're looking for.
-- **Scope:** First we would start with pairing people based on music taste, then perhaps this could evolve into a music sharing application as well to broaden its usage. Large potential for use with spotify, apple music, or other music streaming applications.
+- **Category:** Music
+- **Story:** Users have the ability to find new music by genre, artist, then songs. The user can then decide to add the song to their playlist if they are a registered user, if not, they won't have these abilities. Or users can enjoy music they already know by generating an endless amount of playlist. 
+- **Market:** Any individual who loves music could choose to use this app.
+- **Habit:** This app could be used as often or unoften as the user wanted depending on what exactly they're looking for or how much the user want to listen music.
+- **Scope:** First we would start with asking the user what type of genre they are interested in listening to, then we would list all artist based on that genre, and once an artist is choosen, a list of songs will appear with the choice of adding the song to their playlist. This could evolve into a music sharing application with playlists already created as well to broaden its usage. There is a large potential for use with other music streaming applications.
 
 ## Product Spec
 ### 1. User Stories (Required and Optional)
 
 **Required Must-have Stories**
 
-* User logs in to access previous chats and preference settings
-* User picks what their favorite artist/genre/etc. (Think Spotify interface)
-* Matches have a chat window to get to know each other, with the ability to skip music and unmatch (Tinder Style).
-* Profile pages for each user
-* Settings (Accesibility, Notification, General, etc.)
+* User logs in to access playlist application.
+* User picks what their favorite artist/genre/songs. 
+* User has the ability to add song to their playlist.
+* "My Playlist" page for each user.
+
 
 **Optional Nice-to-have Stories**
 
-* Log of past songs/people with album art covers matching
-* Page of most played songs (i.e. songs that most users are connecting through)
-* Profile Add-On: Top music choices, etc.
-* Optional Shuffle Button (i.e. random encounter/random song)
-* Listening/Encounter Queue
+* Page of most downloaded/added songs.
+* Page of top muisic choices.
+* Optional Share Button.
+* Settings (Accesibility, Notification, General, etc.)
 
 ### 2. Screens
 
 * Login 
 * Register - User signs up or logs into their account
-   * Upon Download/Reopening of the application, the user is prompted to log in to gain access to their profile information to be properly matched with another person. 
-   * ...
-* Messaging Screen - Chat for users to communicate (direct 1-on-1)
-   * Upon selecting music choice users matched and message screen opens
-* Profile Screen 
-   * Allows user to upload a photo and fill in information that is interesting to them and others
-* Song Selection Screen.
-   * Allows user to be able to choose their desired song, artist, genre of preference and begin listening and interacting with others.
+* Home Screen - User can choose 'Create Playlist', 'My Playlist', or 'Settings'.
+* Create Playlist 
+   * Allows user to create playlist
+    * Genre
+    * Artist
+    * Song
+* My Playlist - Allows user to view their created playlist.
 * Settings Screen
-   * Lets people change language, and app notification settings.
+   * Lets people log out, and change app notification settings.
 
 ### 3. Navigation
 
 **Tab Navigation** (Tab to Screen)
 
-* Music selection
-* Profile
+* Home
+* Create Playlist
+* My Playlist
 * Settings
 
 Optional:
-* Music/Encounter Queue
-* Discover (Top Choices)
+* Top Songs
 
 **Flow Navigation** (Screen to Screen)
 * Forced Log-in -> Account creation if no log in is available
-* Music Selection (Or Queue if Optional) -> Jumps to Chat
-* Profile -> Text field to be modified. 
-* Settings -> Toggle settings
+* Create Playlist -> Genre Selection -> Artist Selection -> Song Selection
+* My Playlist -> Playlist Screen 
+* Settings -> Toggle Settings
 
 ## Wireframes
 <img src="https://i.imgur.com/9CrjH1K.jpg" width=800><br>
