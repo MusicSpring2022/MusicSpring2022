@@ -73,6 +73,7 @@ Optional:
 ![mwireframe](https://user-images.githubusercontent.com/77789122/155067867-6fe30530-fe11-4f80-9ff5-313ee9304aee.jpg) 
 
 ### Digital Wireframes & Mockups
+![page1](https://user-images.githubusercontent.com/77789122/155186467-6fe6d0c1-645b-43e1-9fc2-d34a2c7857c5.jpg)
 <img src="https://i.imgur.com/lYHn37F.jpg" height=200>
 
 ### [BONUS] Interactive Prototype
