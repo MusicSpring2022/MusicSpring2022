@@ -17,7 +17,7 @@ A service that connects people who love music by generating playlists full of so
 - **Story:** Users have the ability to find new music by genre, artist, then songs. The user can then decide to add the song to their playlist if they are a registered user, if not, they won't have these abilities. Or users can enjoy music they already know by generating an endless amount of playlist. 
 - **Market:** Any individual who loves music could choose to use this app.
 - **Habit:** This app could be used as often or unoften as the user wanted depending on what exactly they're looking for or how much the user want to listen music.
-- **Scope:** First we would start with asking the user what type of genre they are interested in listening to, then we would list all artist based on that genre, and once an artist is choosen, a list of songs will appear with the choice of adding the song to their playlist. This could evolve into a music sharing application with playlists already created as well to broaden its usage. There is a large potential for use with other music streaming applications.
+- **Scope:** First we would start with asking the user what type of genre they are interested in listening to, then we would list all artist based on that genre, and once an artist is choosen, a list of songs will appear with the choice of adding the song to their playlist. This application will allows users that love music to create and save a playlist they can listen to 24/7 or whenever they want. This could evolve into a music sharing application with playlists already created as well to broaden its usage. There is a large potential for use with other music streaming applications.
 
 ## Product Spec
 ### 1. User Stories (Required and Optional)
