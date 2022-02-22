@@ -76,4 +76,6 @@ Optional:
 <img src="https://i.imgur.com/lYHn37F.jpg" height=200>
 
 ### [BONUS] Interactive Prototype
-<img src="https://i.imgur.com/AiKfE5g.gif" width=200>
+
+![Musicly prototype](https://user-images.githubusercontent.com/77789122/155068310-75cded9b-42b4-4155-b0e9-df3b58f938e0.gif)
+
