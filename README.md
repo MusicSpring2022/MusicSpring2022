@@ -70,8 +70,8 @@ Optional:
 * Settings -> Toggle Settings
 
 ## Wireframes
-![mwireframe](https://user-images.githubusercontent.com/77789122/155067867-6fe30530-fe11-4f80-9ff5-313ee9304aee.jpg) 
-
+<img src="wireframe musicly.jpg" height=200>
+     
 ### Digital Wireframes & Mockups
 <img src="page1.jpg" height=200><img/>
 <img src="page2.jpg" height=200>
