@@ -73,8 +73,13 @@ Optional:
 ![mwireframe](https://user-images.githubusercontent.com/77789122/155067867-6fe30530-fe11-4f80-9ff5-313ee9304aee.jpg) 
 
 ### Digital Wireframes & Mockups
-<img src="page1.jpg" height=200>
-<img src="https://i.imgur.com/lYHn37F.jpg" height=200>
+<img src="page1.jpg" height=200><img/>
+<img src="page2.jpg" height=200>
+<img src="page3.jpg" height=200>
+<img src="page4.jpg" height=200>
+<img src="page5.jpg" height=200>
+<img src="page6.jpg" height=200>
+<img src="page7.jpg" height=200>
 
 ### [BONUS] Interactive Prototype
 ![Musicly prototype](https://user-images.githubusercontent.com/77789122/155068887-f97cb9ec-57fa-4124-adcb-1b1eead1468f.gif)
