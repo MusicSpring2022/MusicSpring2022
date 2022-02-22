@@ -82,5 +82,5 @@ Optional:
 <img src="page7.jpg" height=200>
 
 ### [BONUS] Interactive Prototype
-![Musicly prototype](https://user-images.githubusercontent.com/77789122/155068887-f97cb9ec-57fa-4124-adcb-1b1eead1468f.gif)
+<img src="Musicly prototype.gif">
 
