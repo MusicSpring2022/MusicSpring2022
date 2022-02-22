@@ -77,5 +77,5 @@ Optional:
 
 ### [BONUS] Interactive Prototype
 
-![Musicly prototype](https://user-images.githubusercontent.com/77789122/155068310-75cded9b-42b4-4155-b0e9-df3b58f938e0.gif)
+![Musicly prototype (2)](https://user-images.githubusercontent.com/77789122/155068565-5a837e40-cae6-44dc-be8f-26ef5afe34e2.jpg)
 
