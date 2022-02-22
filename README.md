@@ -70,7 +70,7 @@ Optional:
 * Settings -> Toggle Settings
 
 ## Wireframes
-<img src="https://i.imgur.com/9CrjH1K.jpg" width=800><br>
+![mwireframe](https://user-images.githubusercontent.com/77789122/155067867-6fe30530-fe11-4f80-9ff5-313ee9304aee.jpg) 
 
 ### Digital Wireframes & Mockups
 <img src="https://i.imgur.com/lYHn37F.jpg" height=200>
