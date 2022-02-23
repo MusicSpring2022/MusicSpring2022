@@ -83,4 +83,6 @@ Optional:
 
 ### [BONUS] Interactive Prototype
 <img src="Musicly prototype.gif">
+<img src="MM-fix.gif">
+
 
