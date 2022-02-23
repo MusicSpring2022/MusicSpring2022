@@ -82,7 +82,7 @@ Optional:
 <img src="page7.jpg" height=200>
 
 ### [BONUS] Interactive Prototype
-<img src="Musicly prototype.gif">
-<img src="MM-fix.gif">
+<img src="MM-fix.gif" height=200><img/>
+<img src="MM2.gif" height=200>
 
 
