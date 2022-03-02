@@ -129,7 +129,7 @@ Optional:
       - (Update/PUT) Update user profile image
 #### [IF EXISTS:] Existing API Endpoints
 ##### An API Of MUSIC
-- Base URL - [https://spotify23.p.rapidapi.com]
+- Base URL - https://spotify23.p.rapidapi.com
 
    HTTP Verb | Endpoint | Description
    ----------|----------|------------
