@@ -93,14 +93,12 @@ Optional:
 
    | Property      | Type     | Description |
    | ------------- | -------- | ------------|
-   | objectId      | String   | unique id for the user post (default field) |
-   | author        | Pointer to User| image author |
-   | image         | File     | image that user posts |
-   | caption       | String   | image caption by author |
-   | commentsCount | Number   | number of comments that has been posted to an image |
-   | likesCount    | Number   | number of likes for the post |
-   | createdAt     | DateTime | date when post is created (default field) |
-   | updatedAt     | DateTime | date when post is last updated (default field) |
+   | userKey      | String   | Key for user |
+   | Playlist        | Array| Array of songs |
+   | Genre         | String    | Name of genres |
+   | Artist       | Map  | Map containing information for artist |
+   | song | File   | Audio file of song |
+   |color    | String  | Hex color |
    
   
 ### Networking
@@ -130,25 +128,14 @@ Optional:
       - (Read/GET) Query logged in user object
       - (Update/PUT) Update user profile image
 #### [IF EXISTS:] Existing API Endpoints
-##### An API Of Ice And Fire
-- Base URL - [http://www.anapioficeandfire.com/api](http://www.anapioficeandfire.com/api)
+##### An API Of MUSIC
+- Base URL - [https://spotify23.p.rapidapi.com]
 
    HTTP Verb | Endpoint | Description
    ----------|----------|------------
-    `GET`    | /characters | get all characters
-    `GET`    | /characters/?name=name | return specific character by name
-    `GET`    | /houses   | get all houses
-    `GET`    | /houses/?name=name | return specific house by name
-
-##### Game of Thrones API
-- Base URL - [https://api.got.show/api](https://api.got.show/api)
-
-   HTTP Verb | Endpoint | Description
-   ----------|----------|------------
-    `GET`    | /cities | gets all cities
-    `GET`    | /cities/byId/:id | gets specific city by :id
-    `GET`    | /continents | gets all continents
-    `GET`    | /continents/byId/:id | gets specific continent by :id
-    `GET`    | /regions | gets all regions
-    `GET`    | /regions/byId/:id | gets specific region by :id
-    `GET`    | /characters/paths/:name | gets a character's path with a given name
+    `GET`    | /search | get music object
+    `GET`    | /search/ids| get specific music object using id
+    `GET`    | /artist   | get artist object
+    `GET`    | /artists/ids   | get specific artist object using id
+    `GET`    | /playlist | get available playlist
+    `GET`    | /playlist/id | get specific playlist using PlaylistID 
