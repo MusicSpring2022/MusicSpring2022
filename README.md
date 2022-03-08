@@ -123,3 +123,5 @@ Optional:
     `GET`    | /artists/ids   | get specific artist object using id
     `GET`    | /playlist | get available playlist
     `GET`    | /playlist/id | get specific playlist using PlaylistID 
+    
+    <img src="Musiclypages.gif" height=200>
