@@ -108,11 +108,9 @@ Optional:
       - (Delete) Delete existing songs off playlists
       - (Create/POST) Create a new playlist
       - (Delete) Delete existing album 
-   - Create Post Screen
-      - (Create/POST) Create a new post object
    - Profile Screen
       - (Read/GET) Query logged in user object
-      - (Update/PUT) Update user profile image
+      
 #### [IF EXISTS:] Existing API Endpoints
 ##### An API Of MUSIC
 - Base URL - https://spotify23.p.rapidapi.com
