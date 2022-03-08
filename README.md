@@ -124,4 +124,5 @@ Optional:
     `GET`    | /playlist | get available playlist
     `GET`    | /playlist/id | get specific playlist using PlaylistID 
     
-    <img src="Musiclypages.gif" height=200>
+    ### Milestone 3 (3/8/2022)
+    <img src="MusiclyPages.gif" height=200>
