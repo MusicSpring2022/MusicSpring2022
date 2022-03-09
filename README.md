@@ -126,3 +126,4 @@ Optional:
     
     ### Milestone 3 (3/8/2022)
     <img src="MusiclyPages.gif" height=200>
+     <img src="data.gif" height=200>
