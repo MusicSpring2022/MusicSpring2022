@@ -27,6 +27,8 @@ function LoginPg() {
                     <Link to="/SignUp"><div id="Lnt">Sign Up</div></Link>
                     <br/>
                     <a href=""><div id="Lnt">Forgotten password?</div></a>
+                    <br/>
+                    <Link to="/Home"><div id="Lnt">Home</div></Link>
                 </div>
             </div>
         </div>
