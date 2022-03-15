@@ -24,7 +24,7 @@ A service that connects people who love music by generating playlists full of so
 
 **Required Must-have Stories**
 
-* User logs in to access playlist application.
+* User logs in to access playlist application. [CHECKED]
 * User picks what their favorite artist/genre/songs. 
 * User has the ability to add song to their playlist.
 * "My Playlist" page for each user.
@@ -126,3 +126,4 @@ Optional:
     
     ### Milestone 3 (3/8/2022)
     <img src="MusiclyPages.gif" height=200>
+     <img src="data.gif" height=200>
