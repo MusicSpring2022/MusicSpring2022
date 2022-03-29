@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import image from "../Image.jpeg";
+import image from "../Assets/Image.jpeg";
 
 function LoginPg() {
     return (
