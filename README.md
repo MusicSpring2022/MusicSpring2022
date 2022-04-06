@@ -130,3 +130,9 @@ Optional:
 
   ### Milestone 4 (3/15/2022)
     <img src="Gif2.gif" height=200>
+
+  ### Milestone 5 (3/30/2022)
+    <img src="Gif3.gif" height=200>
+
+  ### Milestone 6 (4/05/2022)
+    <img src="Gif4.gif" height=200>

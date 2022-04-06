@@ -1,46 +1,42 @@
+// import logo from './Assets/logo.svg';
+// import './App.css';
 import React, {Component} from "react";
-import { Link } from "react-router-dom";
+import "./bar2.css";
 
 
-function Prac(){
-    return(
-        <div>
-        <div className="d-flex" id="wrapper">
+function Prac() {
 
-            <div className="border-end bg-white" id="sidebar-wrapper">
-                <div className="sidebar-heading border-bottom bg-light">Start Bootstrap</div>
-                <div className="list-group list-group-flush">
-                    <Link to="/Home"><a className="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Home</a></Link>
-                    <Link to="/PlaylistPg"><a className="list-group-item list-group-item-action list-group-item-light p-3" href="#!">My Playlist</a></Link>
-                    <Link to="/PlyListGen"><a className="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Generate Playlist</a></Link>
-                    <Link to="/"><a className="list-group-item list-group-item-action list-group-item-light p-3" href="#!">SignOut</a></Link>
-                </div>
+        function openNav() {
+        document.getElementById("mySidebar").style.width = "650px";
+        document.getElementById("main").style.marginLeft = "250px";
+    }
+
+        function closeNav() {
+        document.getElementById("mySidebar").style.width = "0";
+        document.getElementById("main").style.marginLeft= "0";
+    }
+
+
+    return (
+        <>
+            <div id="mySidebar" class="sidebar">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+                <a href="#">About</a>
+                <a href="#">Services</a>
+                <a href="#">Clients</a>
+                <a href="#">Contact</a>
             </div>
 
-            <div id="page-content-wrapper">
-                <nav className="navbar navbar-expand-lg navbar-light bg-light border-bottom">
-                    <div className="container-fluid">
-                        <button className="btn btn-primary" id="sidebarToggle">Toggle Menu</button>
-                    </div>
-                </nav>
-
-                <div className="container-fluid">
-                    <h1 className="mt-4">Simple Sidebar</h1>
-                    <p>The starting state of the menu will appear collapsed on smaller screens, and will appear
-                        non-collapsed on larger screens. When toggled using the button below, the menu will change.</p>
-                    <p>
-                        Make sure to keep all page content within the
-                        <code>#page-content-wrapper</code>
-                        . The top navbar is optional, and just for demonstration. Just create an element with the
-                        <code>#sidebarToggle</code>
-                        ID which will toggle the menu when clicked.
-                    </p>
-                </div>
+            <div id="main">
+                <button class="openbtn" onclick="openNav()"> Open Sidebar</button>
+                <h2>Collapsed Sidebar</h2>
+                <p>Click on the hamburger menu/bar icon to open the sidebar, and push this content to the right.</p>
             </div>
-        </div>
 
-        </div>
-    )
+
+        </>
+    );
+
 }
 
 export default Prac;

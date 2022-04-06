@@ -1,6 +1,7 @@
 import React, {Component} from "react";
 import { Link } from "react-router-dom";
 import "../Sidebar.css";
+import axios from "axios";
 import Prac from "./Prac";
 
 class Home extends Component{
@@ -14,24 +15,58 @@ class Home extends Component{
         //Values needed to access database to get key
         const client_id = 'a8e0da5091d94622922e03b1d4ea4542';
         const client_secret = 'a91f8fb1acd744bf8622212d7aa23713';
+        var num;
 
-        //Function (Post method) to get API key
+
+        //Async Function (Post method) to get API key
         const getToken = async () => {
-            const result = await fetch('https://accounts.spotify.com/api/token', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded',
-                    'Authorization': 'Basic ' + btoa(client_id + ':' + client_secret)
-                },
-                body: 'grant_type=client_credentials'
-            });
-                const data = await result.json();
-                return data.access_token;
+            //Fetch using spotify base URL and headers containing client id & secret
+                const result = await fetch('https://accounts.spotify.com/api/token', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded',
+                        'Authorization': 'Basic ' + btoa(client_id + ':' + client_secret)
+                    },
+                    body: 'grant_type=client_credentials'
+                })
+                    //Then response with assign function to access variable in promise
+                    .then(res => res.json())
+                    .then(data => assignTK(data.access_token))
+                    .then(() => console.log(num));
+
         }
 
-        let token = getToken();
+        //Function getting featured spotify playlist using token
+        const getPlaylist = async (token) => {
 
-        console.log(token);
+            const limit = 10;
+            const plyListURL = 'https://api.spotify.com/v1/browse/featured-playlists';
+            const result = await fetch(plyListURL, {
+                method: 'GET',
+                headers: { 'Authorization' : 'Bearer ' + token}
+            })
+                .then(res => res.json())
+                .then(data => assignPY(data));
+
+        }
+
+        //Calls get token
+        getToken();
+
+        //Assigns function and calls getPlaylist with token
+        let assignTK = (x) => {
+            num = x;
+            console.log(num);
+            getPlaylist(num);
+            return num;
+        }
+
+        //Sets response from getplaylist function into playlist state variable
+        let assignPY = (x) => {
+            this.setState({playlist: x})
+            console.log(x);
+        }
+
     }
 
     render() {
@@ -56,8 +91,22 @@ class Home extends Component{
                                     <div className="nav-item text-muted" id="sidebarToggle"><h2>Home</h2></div>
                                 </div>
                             </nav>
+                            <br/>
+                            <br/>
                             <div className="container">
-                                <h2></h2>
+                                <div className="col mb-3" >
+                                    <div className="card h-100 position-relative">
+                                        <img className="card-img-top book-mg mx-auto pt-1" src='' className="card-img-top book-img mx-auto pt-1" alt='Playlist image'/>
+                                        <div className="card-body book-card-details" >
+                                            <h5 className="card-title on-list">{this.state.playlist.message}</h5>
+                                            <h6 className="card-title book-title">Playlist Title</h6>
+                                            <h6 className="card-subtitle mb-2 text-muted book-author">Genre</h6>
+                                            <p className="card-text"></p>
+                                        </div>
+
+                                    </div>
+                                </div>
+
                             </div>
                         </div>
                     </div>
