@@ -8,7 +8,7 @@ class Home extends Component{
     //Creates a state variable
     constructor(props) {
         super(props);
-        this.state = {playlist: []}
+        this.state = {playlist: [[]]}
     }
 
     componentDidMount() {
@@ -40,13 +40,14 @@ class Home extends Component{
         const getPlaylist = async (token) => {
 
             const limit = 10;
-            const plyListURL = 'https://api.spotify.com/v1/browse/featured-playlists';
+            const plyListURL = 'https://api.spotify.com/v1/browse/featured-playlists?limit=13';
             const result = await fetch(plyListURL, {
                 method: 'GET',
                 headers: { 'Authorization' : 'Bearer ' + token}
             })
                 .then(res => res.json())
-                .then(data => assignPY(data));
+                .then(data => assignPY(data.playlists.items));
+
 
         }
 
@@ -94,17 +95,27 @@ class Home extends Component{
                             <br/>
                             <br/>
                             <div className="container">
-                                <div className="col mb-3" >
-                                    <div className="card h-100 position-relative">
-                                        <img className="card-img-top book-mg mx-auto pt-1" src='' className="card-img-top book-img mx-auto pt-1" alt='Playlist image'/>
-                                        <div className="card-body book-card-details" >
-                                            <h5 className="card-title on-list">{this.state.playlist.message}</h5>
-                                            <h6 className="card-title book-title">Playlist Title</h6>
-                                            <h6 className="card-subtitle mb-2 text-muted book-author">Genre</h6>
-                                            <p className="card-text"></p>
-                                        </div>
+                                <div className="row">
+                                    {
+                                        this.state.playlist.map((playlist)=>{
+                                            return(
+                                                <div className="col mb-3" >
+                                                    <div className="card h-100 position-relative">
+                                                        <img className="card-img-top mx-auto pt-1" src={playlist.images} className="card-img-top book-img mx-auto pt-1" alt='' />
+                                                        <div className="card-body book-card-details" >
+                                                            <h5 className="card-title on-list">{playlist.name}</h5>
+                                                            <h7 className="card-title text-muted">Description: {playlist.description}</h7>
+                                                            <h6 className="card-subtitle mb-2">{}</h6>
+                                                            <p className="card-text">{}</p>
+                                                        </div>
+                                                        <a target="" rel="noreferrer" href='' className="btn btn-secondary buy">Add</a>
+                                                    </div>
+                                                </div>
+                                            )
+                                        })
 
-                                    </div>
+                                    }
+                                    }
                                 </div>
 
                             </div>
@@ -116,3 +127,5 @@ class Home extends Component{
 }
 
 export default Home;
+
+//JSON.stringify(this.state.playlist[0].name)
