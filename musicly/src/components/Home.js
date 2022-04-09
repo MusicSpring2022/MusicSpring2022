@@ -40,12 +40,13 @@ class Home extends Component{
         const getPlaylist = async (token) => {
 
             const limit = 10;
-            const plyListURL = 'https://api.spotify.com/v1/browse/featured-playlists?limit=13';
+            const plyListURL = 'https://api.spotify.com/v1/browse/featured-playlists?limit=20';
             const result = await fetch(plyListURL, {
                 method: 'GET',
                 headers: { 'Authorization' : 'Bearer ' + token}
             })
                 .then(res => res.json())
+                //.then(data => console.log(data.playlists.items[0].images[0].url))
                 .then(data => assignPY(data.playlists.items));
 
 
@@ -89,7 +90,9 @@ class Home extends Component{
                         <div id="page-content-wrapper">
                             <nav className="navbar navbar-expand-lg navbar-light bg-light border-bottom">
                                 <div className="container-fluid">
-                                    <div className="nav-item text-muted" id="sidebarToggle"><h2>Home</h2></div>
+                                    <div className="nav-item text-muted" id="sidebarToggle">
+                                        <h2>Home</h2>
+                                    </div>
                                 </div>
                             </nav>
                             <br/>
@@ -99,16 +102,18 @@ class Home extends Component{
                                     {
                                         this.state.playlist.map((playlist)=>{
                                             return(
-                                                <div className="col mb-3" >
+                                                <div className="col-md-6 mb-3">
                                                     <div className="card h-100 position-relative">
-                                                        <img className="card-img-top mx-auto pt-1" src={playlist.images} className="card-img-top book-img mx-auto pt-1" alt='' />
+                                                        <img className="card-img-top mx-auto pt-1" src='' className="card-img-top book-img mx-auto pt-1" alt='' />
                                                         <div className="card-body book-card-details" >
                                                             <h5 className="card-title on-list">{playlist.name}</h5>
                                                             <h7 className="card-title text-muted">Description: {playlist.description}</h7>
                                                             <h6 className="card-subtitle mb-2">{}</h6>
                                                             <p className="card-text">{}</p>
                                                         </div>
-                                                        <a target="" rel="noreferrer" href='' className="btn btn-secondary buy">Add</a>
+                                                        <br/>
+                                                        <br/>
+                                                        <a target="" rel="noreferrer" href='' className="btn btn-light">Add</a>
                                                     </div>
                                                 </div>
                                             )
