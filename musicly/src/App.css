@@ -2,29 +2,22 @@ body {
   background-color: #282c34 !important;
 }
 
-.App {
-  text-align: center;
+body.login {
+  background-image: url("http://localhost:3000/img/restaurant.jpeg");
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+body.login .justify-content-start + div {
+  padding-left: 0;
+}
+body.login .card{
+  border-radius: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
+.navbar{
+  background-color: #fafac0;
 }
 
 #Lnt {

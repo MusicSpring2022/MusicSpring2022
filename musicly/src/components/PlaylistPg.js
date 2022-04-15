@@ -2,6 +2,34 @@ import React, {Component} from "react";
 import {Link} from "react-router-dom";
 
 class PlaylistPg extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {playlist: [[]], /*IDs: []*/};
+    }
+
+
+    componentDidMount() {
+        // const getDbPlaylist = async (playlistID) => {
+        //
+        //     const URL = 'https://api.spotify.com/v1/playlists/'+ playlistID;
+        //     const result = await fetch(URL, {
+        //         method: 'GET',
+        //         headers: { 'Authorization' : 'Bearer ' + token}
+        //     })
+        //         .then(res => res.json())
+        //         //.then(data => console.log(data.playlists.items[0].images[0].url))
+        //         .then(data => assignPY(data.playlists.items));
+        //
+        //
+        // }
+        //
+        // let assignPY = (x) => {
+        //     this.setState({playlist: x})
+        //     console.log(x);
+        // }
+    }
+
+
     render(){
         return(
             <div>
@@ -24,6 +52,7 @@ class PlaylistPg extends Component {
                             </div>
                         </nav>
                         <div className="container">
+
 
                         </div>
                     </div>
