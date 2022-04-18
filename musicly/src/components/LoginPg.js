@@ -42,14 +42,14 @@ function LoginPg(props) {
                         <br/>
                         <br/>
                         <form onSubmit={handleSubmit}>
-                        <div className="input-group mb-3 w-50 center">
                             {
                                 errors && errors.length > 0 ?
                                     <div className="alert alert-danger">{errors[0].err.message}</div>
                                     :""
                             }
-                            <span className="input-group-text" id="basic-addon1">Name</span>
-                            <input type="text" className="form-control" placeholder="Username" aria-label="Username"
+                        <div className="input-group mb-3 w-50 center">
+                            <span className="input-group-text" id="basic-addon1">Email</span>
+                            <input type="email" className="form-control" placeholder="Username" aria-label="Username"
                                    aria-describedby="basic-addon1" required ref={emailRef}/>
                         </div>
                         <div className="input-group mb-6 w-50 center">

@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import axios from "axios";
 import {initializeApp} from "firebase/app";
-import {getAuth, signInWithEmailAndPassword} from "firebase/auth";
+import {getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword} from "firebase/auth";
 
 
 export const AuthContext = React.createContext({
@@ -15,6 +15,7 @@ export const AuthContext = React.createContext({
     removeFromCart: () => {},
     signIn: () =>{},
     signOut: () =>{},
+    signUp: () =>{}
 
 })
 
@@ -99,6 +100,39 @@ export class AuthProvider extends Component {
                 //stop token refresh
                 clearInterval(this.state.refresh );
             }).catch(err => console.log(err));
+        },
+
+        signUp: async (email, password)=>{
+            const firebaseConfig = {
+                apiKey: "AIzaSyCU3ekkEysFiL-mshj5x57cLI6PvEtE1l8",
+                authDomain: "musicly-82c0c.firebaseapp.com",
+                projectId: "musicly-82c0c",
+                storageBucket: "musicly-82c0c.appspot.com",
+                messagingSenderId: "1065242604129",
+                appId: "1:1065242604129:web:65282615c80b4c8f59f020"
+            };
+
+            // Initialize Firebase
+            initializeApp(firebaseConfig);
+
+            const auth = getAuth();
+            let flag = false;
+
+            await createUserWithEmailAndPassword(auth, email, password)
+                .then((userCredential) => {
+                    // Signed in
+                    const user = userCredential.user;
+
+                    // ...
+                    flag = true;
+                })
+                .catch((error) => {
+                    const errorCode = error.code;
+                    const errorMessage = error.message;
+                    this.state.setErrors(error.response.data, false);
+                    // ..
+                });
+            return flag;
         }
     }
 
@@ -117,10 +151,10 @@ export class AuthProvider extends Component {
     render() {
 
         const { children } = this.props
-        const {currentUser, errors, cart,refresh, setErrors, setCurrentUser, signIn, signOut, addToCart, removeFromCart } = this.state
+        const {currentUser, errors, cart,refresh, setErrors, setCurrentUser, signIn, signOut, signUp, addToCart, removeFromCart } = this.state
 
         return (
-            <AuthContext.Provider value={{currentUser, errors, cart, refresh, setErrors, setCurrentUser, signIn, signOut, addToCart, removeFromCart}}>
+            <AuthContext.Provider value={{currentUser, errors, cart, refresh, setErrors, setCurrentUser, signIn, signOut, signUp, addToCart, removeFromCart}}>
                 {children}
             </AuthContext.Provider>
         );
