@@ -9,23 +9,26 @@ class PlaylistPg extends Component {
 
 
     componentDidMount() {
-        // const getDbPlaylist = async (playlistID) => {
+        let num = 0;
+        // while(num < 5) {
+        //     const getDbPlaylist = async (playlistID) => {
         //
-        //     const URL = 'https://api.spotify.com/v1/playlists/'+ playlistID;
-        //     const result = await fetch(URL, {
-        //         method: 'GET',
-        //         headers: { 'Authorization' : 'Bearer ' + token}
-        //     })
-        //         .then(res => res.json())
-        //         //.then(data => console.log(data.playlists.items[0].images[0].url))
-        //         .then(data => assignPY(data.playlists.items));
+        //         const URL = 'https://api.spotify.com/v1/playlists/'+ playlistID;
+        //         const result = await fetch(URL, {
+        //             method: 'GET',
+        //             headers: { 'Authorization' : 'Bearer ' + token}
+        //         })
+        //             .then(res => res.json())
+        //             //.then(data => console.log(data.playlists.items[0].images[0].url))
+        //             .then(data => assignPY(data.playlists.items));
         //
         //
-        // }
+        //     }
         //
-        // let assignPY = (x) => {
-        //     this.setState({playlist: x})
-        //     console.log(x);
+        //     let assignPY = (x) => {
+        //         this.pushState({playlist: x}, "")
+        //         console.log(x);
+        //     }
         // }
     }
 
@@ -52,7 +55,39 @@ class PlaylistPg extends Component {
                             </div>
                         </nav>
                         <div className="container">
+                            {/*<div className="row">*/}
+                            {/*    {*/}
+                            {/*        this.state.playlist.map((playlist)=>{*/}
+                            {/*            //Button to add playlist ID to DB*/}
+                            {/*            let handleClick = () => {*/}
+                            {/*                //Store playlist ID in Firebase*/}
+                            {/*                console.log("Hello World");*/}
+                            {/*            }*/}
+                            {/*            let iurl = ""*/}
+                            {/*            if(playlist.images)*/}
+                            {/*                iurl = playlist.images[0].url;*/}
+                            {/*            return(*/}
+                            {/*                <div className="col-md-6 mb-3">*/}
+                            {/*                    <div className="card h-100 position-relative">*/}
+                            {/*                        <img className="card-img-top mx-auto pt-1" src={iurl} className="card-img-top book-img mx-auto pt-1" alt='' />*/}
+                            {/*                        <div className="card-body book-card-details" >*/}
+                            {/*                            <h5 className="card-title on-list">{playlist.name}</h5>*/}
+                            {/*                            <h7 className="card-title text-muted">Description: {playlist.description}</h7>*/}
+                            {/*                            <h6 className="card-subtitle mb-2">{}</h6>*/}
+                            {/*                            <p className="card-text">{}</p>*/}
+                            {/*                        </div>*/}
+                            {/*                        <br/>*/}
+                            {/*                        <br/>*/}
+                            {/*                        <button className="btn btn-light" onClick={handleClick}>Save playlist</button>*/}
 
+                            {/*                    </div>*/}
+                            {/*                </div>*/}
+                            {/*            )*/}
+
+                            {/*        })*/}
+
+                            {/*    }*/}
+                            {/*</div>*/}
 
                         </div>
                     </div>

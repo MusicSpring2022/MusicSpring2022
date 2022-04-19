@@ -83,7 +83,7 @@ class Home extends Component{
                                 <Link to="/Home"><a className="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Home</a></Link>
                                 <Link to="/PlaylistPg"><a className="list-group-item list-group-item-action list-group-item-light p-3" href="#!">My Playlist</a></Link>
                                 <Link to="/PlyListGen"><a className="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Generate Playlist</a></Link>
-                                <Link to="/"><a className="list-group-item list-group-item-action list-group-item-light p-3" href="#!">SignOut</a></Link>
+                                <Link to="/Logout"><a className="list-group-item list-group-item-action list-group-item-light p-3" href="#!">SignOut</a></Link>
                                 <Link to="/Prac">Prac</Link>
                             </div>
                         </div>
@@ -92,7 +92,7 @@ class Home extends Component{
                             <nav className="navbar navbar-expand-lg navbar-light bg-light border-bottom">
                                 <div className="container-fluid">
                                     <div className="nav-item text-muted" id="sidebarToggle">
-                                        <h2>Home</h2>
+                                        <h3>Home</h3>
                                     </div>
                                 </div>
                             </nav>
@@ -130,7 +130,6 @@ class Home extends Component{
 
                                         })
 
-                                    }
                                     }
                                 </div>
 
