@@ -32,4 +32,9 @@ public class PlaylistIDService {
         return list;
     }
 
+    public boolean setItemID(String id){
+        return true;
+    }
+
+
 }

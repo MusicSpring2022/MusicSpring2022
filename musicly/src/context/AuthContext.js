@@ -9,17 +9,20 @@ export const AuthContext = React.createContext({
     cart:[],
     errors: [],
     refresh: null,
+    uidNum: [],
     setErrors: () =>{},
     setCurrentUser: () => {},
     addToCart: () =>{},
     removeFromCart: () => {},
     signIn: () =>{},
     signOut: () =>{},
-    signUp: () =>{}
+    signUp: () =>{},
+    uid: ()=>{}
 
 })
 
 export class AuthProvider extends Component {
+    uidNum;
 
     state = {
         currentUser: {},
@@ -50,7 +53,7 @@ export class AuthProvider extends Component {
             this.setState({cart: cart});
         },
         signIn: async (email, password)=>{
-
+            let x;
             console.log(email + " " + password);
             const firebaseConfig = {
                 apiKey: "AIzaSyCU3ekkEysFiL-mshj5x57cLI6PvEtE1l8",
@@ -67,6 +70,10 @@ export class AuthProvider extends Component {
             const auth = getAuth();
             signInWithEmailAndPassword(auth, email, password)
                 .then(async (cred)=>{
+                    console.log(cred.user.uid);
+                    this.uidNum = cred.user.uid;
+                    // this.history.push("/PlaylistPg", cred.user.uid);
+
                     let user = cred.user;
                     let res = await user.getIdTokenResult(false);
                     let token = res.token;
@@ -77,16 +84,19 @@ export class AuthProvider extends Component {
                         headers: headers,
                         context: document.body
                     }).then((res)=>{
-                        this.state.setCurrentUser(res.data.customer);
+                        this.state.setCurrentUser(res.data.User);
                         localStorage.setItem("user", JSON.stringify(this.state.currentUser));
                     }).catch((err) => {
                         console.log(err);
                         this.state.setErrors(err.response.data, false);
                     })
+
                 })
                 .catch(function (err) {
                     // Handle Errors here.
-                    this.state.setErrors(err.response.data, false);
+                    console.log(this)
+                    this.setCurrentUser(null);
+                   this.setErrors(err.response, false);
                 });
 
             //refersh token every 30 minutes
@@ -133,6 +143,11 @@ export class AuthProvider extends Component {
                     // ..
                 });
             return flag;
+        },
+
+        uid: async ()=>{
+            console.log(JSON.stringify(this.uidNum));
+            return JSON.stringify(this.uidNum);
         }
     }
 
@@ -151,10 +166,10 @@ export class AuthProvider extends Component {
     render() {
 
         const { children } = this.props
-        const {currentUser, errors, cart,refresh, setErrors, setCurrentUser, signIn, signOut, signUp, addToCart, removeFromCart } = this.state
+        const {currentUser, errors, cart,refresh, setErrors, setCurrentUser, signIn, signOut, signUp, addToCart, removeFromCart, uid } = this.state
 
         return (
-            <AuthContext.Provider value={{currentUser, errors, cart, refresh, setErrors, setCurrentUser, signIn, signOut, signUp, addToCart, removeFromCart}}>
+            <AuthContext.Provider value={{currentUser, errors, cart, refresh, setErrors, setCurrentUser, signIn, signOut, signUp, addToCart, removeFromCart, uid}}>
                 {children}
             </AuthContext.Provider>
         );

@@ -140,3 +140,6 @@ Optional:
   ### Milestone 7 (4/12/2022)
     <img src="Gif5.gif" height=200>
     <img src="Gif6.gif" height=200>
+
+  ### Milestone 8 (4/19/2022)
+    <img src="Gif7.gif" height=200>

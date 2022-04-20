@@ -12,7 +12,6 @@ function LoginPg(props) {
     let navigate = useNavigate();
 
 
-
     async function handleSubmit(event){
 
         console.log("execute");
@@ -24,7 +23,6 @@ function LoginPg(props) {
         {
             context.setErrors(null, false);
             navigate("/Home");
-
 
         }
         else {

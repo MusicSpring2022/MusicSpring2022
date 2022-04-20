@@ -1,8 +1,9 @@
 import React, {Component} from "react";
 import { Link } from "react-router-dom";
 import "../Sidebar.css";
-import axios from "axios";
-import Prac from "./Prac";
+import {AuthContext} from "../context/AuthContext";
+// import axios from "axios";
+// import Prac from "./Prac";
 
 class Home extends Component{
     //Creates a state variable
@@ -11,7 +12,12 @@ class Home extends Component{
         this.state = {playlist: [[]]}
     }
 
+
     componentDidMount() {
+        const MyContext = React.createContext(AuthContext);
+
+        console.log(MyContext);
+
         //Values needed to access database to get key
         const client_id = 'a8e0da5091d94622922e03b1d4ea4542';
         const client_secret = 'a91f8fb1acd744bf8622212d7aa23713';
@@ -39,7 +45,6 @@ class Home extends Component{
         //Function getting featured spotify playlist using token
         const getPlaylist = async (token) => {
 
-            const limit = 10;
             const plyListURL = 'https://api.spotify.com/v1/browse/featured-playlists?limit=20';
             const result = await fetch(plyListURL, {
                 method: 'GET',
@@ -71,6 +76,11 @@ class Home extends Component{
 
     }
 
+    // handleClick (){
+    //     //Store playlist ID in Firebase
+    //
+    //     console.log("Hello World");
+    // }
 
     render() {
             return (
@@ -103,10 +113,6 @@ class Home extends Component{
                                     {
                                         this.state.playlist.map((playlist)=>{
                                             //Button to add playlist ID to DB
-                                            let handleClick = () => {
-                                                //Store playlist ID in Firebase
-                                                console.log("Hello World");
-                                            }
                                             let iurl = ""
                                             if(playlist.images)
                                                 iurl = playlist.images[0].url;
@@ -122,7 +128,7 @@ class Home extends Component{
                                                         </div>
                                                         <br/>
                                                         <br/>
-                                                        <button className="btn btn-light" onClick={handleClick}>Save playlist</button>
+                                                        <button className="btn btn-light" /*onClick={handleClick}*/>Save playlist</button>
 
                                                     </div>
                                                 </div>

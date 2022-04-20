@@ -54,5 +54,6 @@ security:
     - /session
     - /css/**
     - /js/**
+    - /api/**
   exposed-headers:
     - X-Xsrf-Token

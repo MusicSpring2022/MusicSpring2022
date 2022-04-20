@@ -112,7 +112,9 @@ class PlyListGen extends Component{
                                             </div>
                                         </form>
                                     </div>
+
                                     <div className="card-footer text-end">
+
                                         <button type="button" className="btn btn-secondary">Next</button>
                                     </div>
                                 </div>
