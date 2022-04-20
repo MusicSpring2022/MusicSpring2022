@@ -25,7 +25,7 @@ A service that connects people who love music by generating playlists full of so
 **Required Must-have Stories**
 
 * User logs in to access playlist application. [CHECKED]
-* User picks what their favorite artist/genre/songs. 
+* User picks what their favorite artist/genre/songs. [CHECKED]
 * User has the ability to add song to their playlist.
 * "My Playlist" page for each user.[CHECKED]
 
