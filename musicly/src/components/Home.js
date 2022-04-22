@@ -2,6 +2,7 @@ import React, {Component} from "react";
 import { Link } from "react-router-dom";
 import "../Sidebar.css";
 import {AuthContext} from "../context/AuthContext";
+import axios from "axios";
 // import axios from "axios";
 // import Prac from "./Prac";
 
@@ -10,13 +11,11 @@ class Home extends Component{
     constructor(props) {
         super(props);
         this.state = {playlist: [[]]}
+        this.handelClick = this.handelClick.bind(this);
     }
 
 
     componentDidMount() {
-        const MyContext = React.createContext(AuthContext);
-
-        console.log(MyContext);
 
         //Values needed to access database to get key
         const client_id = 'a8e0da5091d94622922e03b1d4ea4542';
@@ -75,12 +74,25 @@ class Home extends Component{
         }
 
     }
+    async handelClick(playID){
+        let user = JSON.parse(localStorage.getItem("user"));
+        let uidNum = user.uid;
+        const client_id = 'a8e0da5091d94622922e03b1d4ea4542';
+        const client_secret = 'a91f8fb1acd744bf8622212d7aa23713';
 
-    // handleClick (){
-    //     //Store playlist ID in Firebase
-    //
-    //     console.log("Hello World");
-    // }
+        const result = await fetch("http://localhost:8080/api/PlaylistID/" + uidNum + "/" + playID, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+                'Authorization': 'Basic ' + btoa(client_id + ':' + client_secret)
+            },
+            body: 'grant_type=client_credentials'
+        })
+            .then(res => {
+                console.log(res);
+           }).catch(err => console.log(err));
+
+    }
 
     render() {
             return (
@@ -94,7 +106,6 @@ class Home extends Component{
                                 <Link to="/PlaylistPg"><a className="list-group-item list-group-item-action list-group-item-light p-3" href="#!">My Playlist</a></Link>
                                 <Link to="/PlyListGen"><a className="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Generate Playlist</a></Link>
                                 <Link to="/Logout"><a className="list-group-item list-group-item-action list-group-item-light p-3" href="#!">SignOut</a></Link>
-                                <Link to="/Prac">Prac</Link>
                             </div>
                         </div>
 
@@ -128,7 +139,7 @@ class Home extends Component{
                                                         </div>
                                                         <br/>
                                                         <br/>
-                                                        <button className="btn btn-light" /*onClick={handleClick}*/>Save playlist</button>
+                                                        <button className="btn btn-light" onClick={() => this.handelClick(playlist.id)}>Save playlist</button>
 
                                                     </div>
                                                 </div>
@@ -148,5 +159,3 @@ class Home extends Component{
 }
 
 export default Home;
-
-//JSON.stringify(this.state.playlist[0].name)

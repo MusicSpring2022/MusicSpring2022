@@ -15,18 +15,20 @@ class PlaylistPg extends Component {
         //Values needed to access database to get key
         const client_id = 'a8e0da5091d94622922e03b1d4ea4542';
         const client_secret = 'a91f8fb1acd744bf8622212d7aa23713';
-        var num;
+        let playlists = [];
 
 
         const getLists = async () => {
             let listData = [];
             await axios.get("http://localhost:8080/api/PlaylistID/" + uidNum)
                 .then((res) => {
-                    //console.log(res.data[0].playlistItems);
+                    console.log(res.data[0].playlistItems);
                     //Has ply ids
                     this.setState({playlistId: res.data[0].playlistItems});
-                    let id = res.data[0].playlistItems;
-                    //make spotify call
+                    let plyId = [];
+                        plyId = res.data[0].playlistItems;
+
+
                     //get token
                     const getToken = async () => {
                         //Fetch using spotify base URL and headers containing client id & secret
@@ -41,56 +43,49 @@ class PlaylistPg extends Component {
                             //Then response with assign function to access variable in promise
                             .then(res => res.json())
                             .then(data => {
-                                assignTK(data.access_token, id);
-                            })
-                            .then(() => console.log(num));
+                                console.log(data);
 
 
-                        const getDbPlaylist = async (id, tk) => {
+                                //Call for ply
+                                console.log(plyId.length);
+                                for(let i = 0; i < plyId.length; ++i){
+                                const getPlaylist = async (plyId) => {
 
-                            const URL = 'https://api.spotify.com/v1/playlists/' + tk;
-                            const result = await fetch(URL, {
-                                method: 'GET',
-                                headers: {'Authorization': 'Bearer ' + id}
-                            })
-                                .then(res => res.json())
-                                //.then(data => console.log(data.playlists.items[0].images[0].url))
-                                .then(data => assignPY(data.playlists.items));
+                                    const plyListURL = 'https://api.spotify.com/v1/playlists/' + plyId[i];
+                                    const result = await fetch(plyListURL, {
+                                        method: 'GET',
+                                        headers: {'Authorization': 'Bearer ' + data.access_token}
+                                    })
+                                        .then(res => res.json())
+                                        .then(data => {
+                                            playlists.push(data)
+                                            this.setState({playlist: playlists})
+
+                                        });
+
+                                }
+
+                                getPlaylist(plyId);
+                            }
+
+                            });
 
 
-                        }
-
-                        let assignTK = (x, pyID) => {
-                            let num = x;
-                            let y = pyID;
-                            console.log(num);
-                            console.log(y);
-                            getDbPlaylist(num, y);
-                            return num;
-                        }
-
-                        let assignPY = (x) => {
-                            this.pushState({playlist: x}, "")
-                            console.log(x);
-                        }
                     }
-
 
                     getToken();
 
                 })
 
-
         }
 
-
         getLists()
-
 
     }
 
     render(){
-        console.log(this.state.playlistId);
+
+        console.log(this.state.playlist);
         return(
             <div>
                 <div className="d-flex" id="wrapper">
@@ -111,15 +106,14 @@ class PlaylistPg extends Component {
                                 <div className="nav-item text-muted" id="sidebarToggle"><h2>Playlist Page</h2></div>
                             </div>
                         </nav>
+                        <br/>
+                        <br/>
                         <div className="container">
                             <div className="row">
                                 {
                                     this.state.playlist.map((playlist)=>{
+
                                         //Button to add playlist ID to DB
-                                        let handleClick = () => {
-                                            //Store playlist ID in Firebase
-                                            console.log("Hello World");
-                                        }
                                         let iurl = ""
                                         if(playlist.images)
                                             iurl = playlist.images[0].url;
@@ -135,7 +129,7 @@ class PlaylistPg extends Component {
                                                     </div>
                                                     <br/>
                                                     <br/>
-                                                    <button className="btn btn-light" onClick={handleClick}>Save playlist</button>
+                                                    <button className="btn btn-light" >Remove playlist</button>
 
                                                 </div>
                                             </div>

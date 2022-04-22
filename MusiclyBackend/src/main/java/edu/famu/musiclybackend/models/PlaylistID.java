@@ -15,6 +15,6 @@ public class PlaylistID {
 
     @DocumentId //denotes that the variable is storing the document id value
     private String id;
-    private String UserID;
+    private String userID;
     private ArrayList<String> PlaylistItems;
 }

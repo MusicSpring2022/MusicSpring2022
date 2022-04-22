@@ -53,8 +53,7 @@ export class AuthProvider extends Component {
             this.setState({cart: cart});
         },
         signIn: async (email, password)=>{
-            let x;
-            console.log(email + " " + password);
+
             const firebaseConfig = {
                 apiKey: "AIzaSyCU3ekkEysFiL-mshj5x57cLI6PvEtE1l8",
                 authDomain: "musicly-82c0c.firebaseapp.com",
@@ -72,7 +71,7 @@ export class AuthProvider extends Component {
                 .then(async (cred)=>{
                     console.log(cred.user.uid);
                     this.uidNum = cred.user.uid;
-                    // this.history.push("/PlaylistPg", cred.user.uid);
+
 
                     let user = cred.user;
                     let res = await user.getIdTokenResult(false);
@@ -124,6 +123,7 @@ export class AuthProvider extends Component {
 
             // Initialize Firebase
             initializeApp(firebaseConfig);
+
 
             const auth = getAuth();
             let flag = false;
